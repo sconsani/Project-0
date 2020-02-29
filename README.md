@@ -12,7 +12,7 @@
 
 Questions are stored in a "pool" of about 28 questions. (unless i can pull from a larger data pool of questions.. but then i still need to create highest values for the best answer)
 
-<img src = "Project-0-Fast-Money/wire-frame-1.jpg"></img>
+<img src = "/Projects/Project-0-Fast-Money/wire-frame-1.jpg"></img>
 <img src = "Project-0-Fast-Money/wire-frame-2.jpg"></img>
 <img src = "Project-0-Fast-Money/wire-frame-3.jpg"></img>
 <img src = "Project-0-Fast-Money/wire-frame-4.jpg"></img>
