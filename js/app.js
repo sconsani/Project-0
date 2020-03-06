@@ -80,8 +80,12 @@ const triviaqs = [
 // 	console.log(triviaquest);
 // };
 
+let playerturn = 1;
 
+let currentRound = 0;
 
+let playerOneScore = 0
+let playerTwoScore = 0;
 
 // FUNCTIONS
 //EVENT LISTENERS - TO RUN FUNCTIONS AND METHODS - IN ORDER
@@ -118,9 +122,7 @@ function start () {
 	}
 };
 
-let currentRound = 0;
-let playerOneScore = 0
-let playerTwoScore = 0;
+
 
 //player 1 start button - begin game - show question, answers, and start timer	
 let playerOneGo = document.getElementById('player1-start');
@@ -216,8 +218,11 @@ nextButton.addEventListener('click', next)
 		currentRound++;
 
 		if (currentRound >= triviaqs.length) {
-			hidePlayerOne ();
+			playerturn++;
 			playerTwoTurn();
+			hidePlayerOne ();
+			console.log(playerturn);
+			
 
 		//end game
 		//display new beginning - introduce player 2's turn
@@ -236,18 +241,26 @@ nextButton.addEventListener('click', next)
 			header.style.display = "none";
 			pOneRadioGone.style.display = "none";	
 		}
+		console.log("happens second")
 };
 
-function playerTwoTurn () {
-	let ptwo = document.getElementById("playertwomode");
-	generateQuestion(currentRound);
-	generateAnswers(currentRound);
+	function playerTwoTurn () {
 
-	if (true ==true) {
-		ptwo.style.display = "block";
+		if (playerturn == 2) {
+			// let ptwo = document.getElementById("playertwomode");
+			currentRound = 0;
+			generateQuestion(currentRound);
+			generateAnswers(currentRound);
 
-	}
+			if (true ==true) {
+				let ptwo = document.getElementById("playertwomode");
+				ptwo.style.display = "block";
 
+			}
+				console.log("happens first")
+
+		}
+		};
 // if (ptwo.style.display === "none") {
 // 			ptwo.style.display = "block"
 // 			pone.style.display = "none"
@@ -256,8 +269,6 @@ function playerTwoTurn () {
 // 		}
 
 
-
-};
 
 
 // //AT END OF SET- DISPLAY PLAYER 2'S TURN/COMPUTERS TURN IN THE H1
