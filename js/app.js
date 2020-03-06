@@ -47,7 +47,7 @@ const triviaqs = [
 				]
 			},
 	{
-		question: "QUESTION 6.",
+		question: "another another QUESTION 6.",
 		answers : [	{answer: "Hit The Bottom", points: 59},
 					{answer: "Shake It", points: 23},
 					{answer: "Stick a Knife In It", points: 16},
@@ -56,13 +56,22 @@ const triviaqs = [
 			},
 
 	{
-		question: "QUESTION 7.",
-		answers : [	{answer: "Hit The Bottom", points: 59},
-					{answer: "Shake It", points: 23},
-					{answer: "Stick a Knife In It", points: 16},
-					{answer: "Hold It Sideways", points: 5}
+		question: "FIND A GOOD LAST ONE.",
+		answers : [	{answer: "better", points: 59},
+					{answer: "best", points: 23},
+					{answer: "better than best", points: 16},
+					{answer: "bestest", points: 5}
+				]
+			},
+	{
+		question: "EMPTY EIGTH TO DELETE.",
+		answers : [	{answer: "NO", points: 0},
+					{answer: "NO", points: 0},
+					{answer: "NO", points: 0},
+					{answer: "NO", points: 0}
 				]
 			}
+
 
 			];
 
@@ -146,18 +155,36 @@ function generateAnswers(index) {
 	let answer2 = triviaqs[index].answers[1].answer;
 	let answer3 = triviaqs[index].answers[2].answer;
 	let answer4 = triviaqs[index].answers[3].answer;
-
-	document.getElementById("answer1").value = triviaqs[index].answers[0].points
-	document.getElementById("answer2").value = triviaqs[index].answers[1].points
-	document.getElementById("answer3").value = triviaqs[index].answers[2].points
-	document.getElementById("answer4").value = triviaqs[index].answers[3].points
-
 	document.getElementById("label1").innerHTML = answer1
 	document.getElementById("label2").innerHTML = answer2
 	document.getElementById("label3").innerHTML = answer3
 	document.getElementById("label4").innerHTML = answer4
 
+	
+	document.getElementById("answer1").value = triviaqs[index].answers[0].points
+	document.getElementById("answer2").value = triviaqs[index].answers[1].points
+	document.getElementById("answer3").value = triviaqs[index].answers[2].points
+	document.getElementById("answer4").value = triviaqs[index].answers[3].points
+
 };
+
+// function saveScore() {
+// 	if (triviaqs[index].answers[0].answer.checked == true) {
+// 		console.log(document.getElementById("answer1").value);
+// 	}
+// };
+
+
+
+
+// 	if(radioButtons[i].checked == true) {
+// 		playerOneScore = playerOneScore += radioButtons[i].answerpoints
+// 	}
+// 	else if (radioButtons[i].checked !==true) {
+// 		playerOneScore = playerOneScore += 0
+// }
+
+
 
 					///////////
 					// finding which answer is checked of the radio buttons:
@@ -169,13 +196,6 @@ function generateAnswers(index) {
 // let answerpoints = triviaqs[0].answers.points
 // for (let i=0; i<radioButtons.length; i++)  {
 
-// 	if(radioButtons[i].checked == true) {
-// 		playerOneScore = playerOneScore += radioButtons[i].answerpoints
-// 	}
-// 	else if (radioButtons[i].checked !==true) {
-// 		playerOneScore = playerOneScore += 0
-// }
-// };
 
 // SAVE VALUES/////////////////
 //save answers to "answers chosen array depending on player"
@@ -186,27 +206,57 @@ function generateAnswers(index) {
 let nextButton = document.getElementById("nextbutton");
 nextButton.addEventListener('click', next)
 //when user clicks NEXT button
-function next() {
+	function next() {
+		generateQuestion(currentRound);
+		//display associated answers
+		generateAnswers(currentRound);
+		//save points to variable
+		//set .checked to false within the document. 
 
-	//save points to variable
+		currentRound++;
 
-	//set .checked to false within the document. 
-
-	currentRound++;
-
-	if (currentRound >= triviaqs.length) {
+		if (currentRound >= triviaqs.length) {
+			hidePlayerOne ();
+			playerTwoTurn();
 
 		//end game
 		//display new beginning - introduce player 2's turn
+	}
+};
+
+	let header = document.getElementById('trivia-header');
+
+	function hidePlayerOne () {
+		let pone = document.getElementById("player1-start");
+		// let pOneGone = document.getElementById("trivia-header");
+		let pOneRadioGone = document.getElementById("form");
+		// console.log(triviaboard);
+
+		if (true==true) {
+			header.style.display = "none";
+			pOneRadioGone.style.display = "none";	
+		}
+};
+
+function playerTwoTurn () {
+	let ptwo = document.getElementById("playertwomode");
+	generateQuestion(currentRound);
+	generateAnswers(currentRound);
+
+	if (true ==true) {
+		ptwo.style.display = "block";
 
 	}
 
-	//Display next question in the array "firstSevenQs"
-	generateQuestion(currentRound);
-	//display associated answers
-	generateAnswers(currentRound);
-	//do this until there are no more questions in the "firstSevenQs" array
-	///////////////HOW TO REPEAT WITHOUT COPYING CODE////////////
+// if (ptwo.style.display === "none") {
+// 			ptwo.style.display = "block"
+// 			pone.style.display = "none"
+// 		} else {
+// 			ptwo.style.display = "none"
+// 		}
+
+
+
 };
 
 
@@ -264,21 +314,3 @@ function next() {
 				// when all 7 questions have been answered OR time runs out: 
 							// display: time up! player 2's turn
 /////////////////////////////////////////////////////////
-
-
-
-
-//not till all questions get displayed/saved and points are counted, and winner is yes or no
-// //TIMER
-
-// let timeleft = 20;
-// let downloadTimer = setInterval(function() {
-// 	if(timeleft <=0) {
-// 		clearInterval(downloadTimer);
-// 		document.getElementById("countdown").innerHTML = "OUT OF TIME!";
-// 	}
-// 	else {
-// 		document.getElementById("countdown").innerHTML = timeleft + " seconds remaining";
-// 	}
-// timeleft -= 1;
-// }, 1000);
