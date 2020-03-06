@@ -227,6 +227,10 @@ nextButton.addEventListener('click', next)
 		else if (currentRound >= triviaqs.length) {
 				displayWinner ();
 				displayScores ();
+				let lastGoneH = document.getElementById("trivia-header");
+				let lastGoneF = document.getElementById("form");
+				lastGoneH.style.display = "none";
+				lastGoneF.style.display = "none";
 				console.log("round three change to end game");
 
 		}
