@@ -13,7 +13,7 @@ The goal of the game Fast Money is to get a combined score of at least 200pts or
 9. User is then prompted to Start Over if they'd like.
 
 
-<img src = "Project-0/Images/wire-frame-1.jpg"></img>
+![alt text] (/Project-0/Images/wire-frame-1.jpg)
 <img src = "Project-0-Fast-Money/wire-frame-2.jpg"></img>
 <img src = "Project-0-Fast-Money/wire-frame-3.jpg"></img>
 <img src = "Project-0-Fast-Money/wire-frame-4.jpg"></img>
