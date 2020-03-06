@@ -62,18 +62,8 @@ const triviaqs = [
 					{answer: "Bagels", points: 16},
 					{answer: "A Knife", points: 20}
 				]
-			},
-	{
-		question: "EMPTY EIGTH TO DELETE.",
-		answers : [	{answer: "NO", points: 0},
-					{answer: "NO", points: 0},
-					{answer: "NO", points: 0},
-					{answer: "NO", points: 0}
-				]
-			}
-
-
-			];
+		}
+	];
 
 // for (let i=0; i<=triviaqs.length; i++) {
 // 	triviaquest = triviaqs[0].answers;
@@ -156,17 +146,18 @@ function generateAnswers(index) {
 	let answer2 = triviaqs[index].answers[1].answer;
 	let answer3 = triviaqs[index].answers[2].answer;
 	let answer4 = triviaqs[index].answers[3].answer;
+	
 	document.getElementById("label1").innerHTML = answer1
 	document.getElementById("label2").innerHTML = answer2
 	document.getElementById("label3").innerHTML = answer3
 	document.getElementById("label4").innerHTML = answer4
-
 
 	document.getElementById("answer1").value = triviaqs[index].answers[0].points
 	document.getElementById("answer2").value = triviaqs[index].answers[1].points
 	document.getElementById("answer3").value = triviaqs[index].answers[2].points
 	document.getElementById("answer4").value = triviaqs[index].answers[3].points
 
+	document.querySelector('#form input[type="radio"]:checked').checked = false;
 };
 
 						// NEXT
@@ -174,40 +165,34 @@ function generateAnswers(index) {
 let nextButton = document.getElementById("nextbutton");
 nextButton.addEventListener('click', next)
 
-	function next() {
-		generateQuestion(currentRound);
-		//display associated answers
-		generateAnswers(currentRound);
-		//save points to variable
-		//set .checked to false within the document. 
+function next() {
+	calculateScore(playerturn);
 
-		currentRound++;
+	currentRound++;
 
-		if (playerturn ==1) {
+	if (playerturn == 1 && currentRound >= triviaqs.length) {
+		playerturn++;
+		playerTwoTurn();
+		hidePlayerOne();
+		return false;
+	} else if (currentRound >= triviaqs.length) {
+		displayWinner ();
+		displayScores ();
+		let lastGoneH = document.getElementById("trivia-header");
+		let lastGoneF = document.getElementById("form");
+		lastGoneH.style.display = "none";
+		lastGoneF.style.display = "none";
+		console.log("round three change to end game");
+		// scoreArray();
+		return false;
+	}
 
-			if (currentRound >= triviaqs.length) {
-				playerturn++;
-				playerTwoTurn();
-				hidePlayerOne ();
-				console.log(playerturn);
-				// scoreArray();
-				// generateScore ();
-				// displayScores();
-
-			}
-		}
-		else if (currentRound >= triviaqs.length) {
-				displayWinner ();
-				displayScores ();
-				let lastGoneH = document.getElementById("trivia-header");
-				let lastGoneF = document.getElementById("form");
-				lastGoneH.style.display = "none";
-				lastGoneF.style.display = "none";
-				console.log("round three change to end game");
-				// scoreArray();
-
-		}
-	};
+	generateQuestion(currentRound);
+	//display associated answers
+	generateAnswers(currentRound);
+	//save points to variable
+	//set .checked to false within the document. 
+};
 
 let header = document.getElementById('trivia-header');
 
@@ -275,16 +260,16 @@ pTwoGo.addEventListener('click', startTwo)
 // display scores
 	function displayScores () {
 		console.log("display scores testing");
+		// generateScore();
 
 		if (true ==true) {
 			endScores.style.display = "block";
 			document.getElementById("poneendscore").innerHTML = `PLAYER 1 SCORE: ${playerOneScore}`
 			document.getElementById("ptwoendscore").innerHTML = `PLAYER 2 SCORE: ${playerTwoScore}`
-			document.getElementById("totalscore").innerHTML = `TOTAL SCORE:${playerTwoScore} pts`
+			document.getElementById("totalscore").innerHTML = `TOTAL SCORE:${playerOneScore + playerTwoScore} pts`
 
 		}
 };
-//change the html to include the values from the player scores and total
 
 // display winner
 	function displayWinner () {
@@ -305,88 +290,40 @@ pTwoGo.addEventListener('click', startTwo)
 			}
 };
 
-
-	
-
-//calculate scores:
-// let playerOneScore = [];
 let playerOneScore = 0
 let playerTwoScore = 0
+// let groupScore = (playerOneScore + playerTwoScore)
+// let totalScore = playerOneScore + playerTwoScore
 
-
-// 	function generateScore(index) {
-	
 // 		let answera = document.getElementById("answer1").value
 // 		let answerb = document.getElementById("answer2").value
 // 		let answerc = document.getElementById("answer3").value
 // 		let answerd = document.getElementById("answer4").value
 
-// 		document.getElementById("answer1").value = triviaqs[index].answers[0].points
-// 		document.getElementById("answer2").value = triviaqs[index].answers[1].points
-// 		document.getElementById("answer3").value = triviaqs[index].answers[2].points
-// 		document.getElementById("answer4").value = triviaqs[index].answers[3].points
 
 
-// 		if(index[i].checked == true) {
-// 			// parseInt();
-// 			playerOneScore = playerOneScore += radioButtons[i].answerpoints
-// 		}
-// 		else if (index[i].checked !==true) {
-// 			playerOneScore = playerOneScore += 0
-// 	}
-// };
+function calculateScore(playerturn) {
+	// decide which player to give points to (using the currentRound [if round === 2])
+	console.log(playerturn)
+	if (playerturn == 1) {
+		let answerPoints = parseInt(document.querySelector('#form input[type="radio"]:checked').value);
+		playerOneScore += answerPoints
+		console.log(playerOneScore);
 
-function generateScore () {
+	} else if (playerturn == 2) {
+		let answerPoints2 = parseInt(document.querySelector('#form input[type="radio"]:checked').value);
+		playerTwoScore += answerPoints2
+		console.log(playerTwoScore);	
 
-		document.getElementById("answer1").value = triviaqs[index].answers[0].points
-		document.getElementById("answer2").value = triviaqs[index].answers[1].points
-		document.getElementById("answer3").value = triviaqs[index].answers[2].points
-		document.getElementById("answer4").value = triviaqs[index].answers[3].points
+				}		
+	
+};
 
-		let ele = document.getElementsByName('triviaanswer'); 
-              
-	        for(let i = 0; i < ele.length; i++) { 
-	            if(ele[i].checked==true) {
-	            	 if(ele[i].value === triviaqs[i].answers.points) {
-	            	 	
-						console.log(triviaqs[i].answers.points)
-	            	 	// playerOneScore++;
-	            	 }
-//else- player 2 score if round 2
+// get the point value from radio buttons
+		// querySelectorAll radio buttons
+		// loop over them to find checked
+		// save score of checked to a variable
 
-	            	//  playerOneScore.push(ele[i].value)
-	            	// };
-	            	// console.log(playerOneScore);
-	    }
-	}
-
-}; 
-
-		// function stringToNumber (value) {
-			// parseInt()
-
-		// 	each time a value is saved to player score
-		// 	run it through this function so it can change from a string to a number
-		// 	before it is added to the accumulating sum
-		// };
+		// use parseInt() and the value to increment score
 
 		
-
-		// function addScore (num) {
-		// 	playerOneScore += num
-		// 	console.log(playerOneScore);
-		// };
-
-
-
-
-
-
-
-
-	
-
-
-
-
-
