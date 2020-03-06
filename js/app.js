@@ -98,7 +98,7 @@ function showInstruct(){
 	let parryid = document.querySelector('#ibut');
 	parryid.append(parry);
 
-	document.querySelector('#ibut p').innerHTML = "1. Select Two Player Mode 2. Player 1- Get Ready. Select what you think is the PUBLIC'S MOST POPULAR answer, then hit NEXT in order to move to the next question. 3. At the end of your round, It's now Player 2's Turn. 7. Player 2, you will get the same round of questions. 8. Answer what you think is the most popular answer. If you choose something Player 1 has already selected, you must choose another answer.  9. Once your round ends we will tally up your score based on the points attributed to each 'best most popular trivia answer' 10. Reach 200 points combined in order to win your cash money prize! 11. Anything below 200 points, and you lose. No money."
+	document.querySelector('#ibut p').innerHTML = "1. Select Two Player Mode 2. Player 1- Get Ready. Select what you think is the PUBLIC'S MOST POPULAR answer, then hit NEXT in order to move to the next question. 3. At the end of your round, It's now Player 2's Turn. 4. Player 2, you will get the same round of questions. 5. Answer what you think is the most popular answer. If you choose something Player 1 has already selected, you must choose another answer.  6. Once your round ends we will tally up your score based on the points attributed to each 'best most popular trivia answer' 7. Reach 200 points combined in order to win your cash money prize! 8. Anything below 200 points, and you lose. No money."
 	
 };
 

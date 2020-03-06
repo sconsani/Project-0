@@ -1,16 +1,17 @@
 # Project-0
-1. Player 1 spins wheel to determine how much money Player 1 and Player 2 are playing to win.
-2. Player 1 gets ready to start
-3. 20 Second Timer begins - they must answer a question to advane to the next one
-4. Time runs out and answers are displayed with their associated point values.
-5. Player 2's turn. OR computer goes (generated random choices- tallying up a "random" point value total based on choices picked for each answer of THE SAME QUESTIONS from player 1st turn. 
-6. IF player 2/computer selects something that player 1 already chose- it will not accept, and they have to select another answer. 
-7. TO WIN: player 1 & player 2 must score > or equal to 200 pts
-8. LOSE - if < 200 pts combined. (not tie)
-9. Can be played again and new questions will filter in. 
-10. 
+Fast Money!
+The goal of the game Fast Money is to get a combined score of at least 200pts or over between both player1 and player2. Each answer is associated with higher or lower points. Higher points are set to answers that are most likely to be answered by the majority of a pool of people. If player1 and player2 cannot get a cumulative score of at least 200 points, they lose and don't go home with any winnings. 
 
-Questions are stored in a "pool" of about 28 questions. (unless i can pull from a larger data pool of questions.. but then i still need to create highest values for the best answer)
+1. User clicks button to Select Two Player Mode.
+2. User is promted to get Player1Ready. Select what you think is the PUBLIC'S MOST POPULAR answer, then hit NEXT in order to move to the next question. 
+3. At the end of Player1's round, It will congratualate and display their total score. And prompt Player2 to get ready for their turn.
+4. Player 2, will be prompted to get ready, this user will get the same round of questions as Player1.
+5. User must choose what they think is the most popular answer. If you choose something Player 1 has already selected, you must choose another answer.  
+6. Once Player2 round ends- the score will be tallied up based on the points attributed to each 'best most popular trivia answer.' 
+7. Reach 200 points combined in order to win cash money prize! 
+8. Anything below 200 points, and users lose. No money."
+9. User is then prompted to Start Over if they'd like.
+
 
 <img src = "Project-0-Fast-Money/wire-frame-1.jpg"></img>
 <img src = "Project-0-Fast-Money/wire-frame-2.jpg"></img>
