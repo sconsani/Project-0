@@ -13,10 +13,5 @@ The goal of the game Fast Money is to get a combined score of at least 200pts or
 9. User is then prompted to Start Over if they'd like.
 
 
-<img src = "Project-0-Fast-Money/wire-frame-1.jpg"></img>
-<img src = "Project-0-Fast-Money/wire-frame-2.jpg"></img>
-<img src = "Project-0-Fast-Money/wire-frame-3.jpg"></img>
-<img src = "Project-0-Fast-Money/wire-frame-4.jpg"></img>
-<img src = "Project-0-Fast-Money/wire-frame-5.jpg"></img>
-<img src = "Project-0-Fast-Money/wire-frame-6.jpg"></img>
-<img src = "Project-0-Fast-Money/wire-frame-7.jpg"></img>
+![alt text] (Images/Project-0-Fast-Money/wire-frame-1.jpg)
+![alt text] (Images/Project-0-Fast-Money/wire-frame-2.jpg)
