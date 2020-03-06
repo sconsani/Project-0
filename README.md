@@ -12,5 +12,10 @@ The goal of the game Fast Money is to get a combined score of at least 200pts or
 8. Anything below 200 points, and users lose. No money."
 9. User is then prompted to Start Over if they'd like.
 
-
-![Images](Project-0/wire-frame-2.jpg) 
+![Images](Images/wire-frame-1.JPG) 
+![Images](Images/wire-frame-2.JPG) 
+![Images](Images/wire-frame-3.JPG) 
+![Images](Images/wire-frame-4.JPG) 
+![Images](Images/wire-frame-5.JPG) 
+![Images](Images/wire-frame-6.JPG)
+![Images](Images/wire-frame-7.JPG) 
