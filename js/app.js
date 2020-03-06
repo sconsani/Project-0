@@ -84,9 +84,6 @@ let playerturn = 1;
 
 let currentRound = 0;
 
-let playerOneScore = 0
-let playerTwoScore = 0;
-
 // FUNCTIONS
 //EVENT LISTENERS - TO RUN FUNCTIONS AND METHODS - IN ORDER
 
@@ -164,7 +161,7 @@ function generateAnswers(index) {
 	document.getElementById("label3").innerHTML = answer3
 	document.getElementById("label4").innerHTML = answer4
 
-	
+
 	document.getElementById("answer1").value = triviaqs[index].answers[0].points
 	document.getElementById("answer2").value = triviaqs[index].answers[1].points
 	document.getElementById("answer3").value = triviaqs[index].answers[2].points
@@ -195,11 +192,22 @@ function generateAnswers(index) {
 					///////////////
 
 //if value is checked - get the "points" and add it to player points
-// let radioButtons = document.getElementsByTagName('input')
-// console.log(radioButtons);
 
-// let answerpoints = triviaqs[0].answers.points
-// for (let i=0; i<radioButtons.length; i++)  {
+// function scoreArray () {
+// 		let ele = document.getElementsByName('triviaanswer').value; 
+              
+//         for(let i = 0; i < ele.length; i++) { 
+//             if(ele[i].checked) {
+//             	 playerOneScore.push(ele[i].value)
+//             	};
+//             	console.log(playerOneScore);
+//     }
+
+// }; 
+
+
+
+
 
 						// NEXT
 
@@ -222,6 +230,8 @@ nextButton.addEventListener('click', next)
 				playerTwoTurn();
 				hidePlayerOne ();
 				console.log(playerturn);
+				// scoreArray();
+
 			}
 		}
 		else if (currentRound >= triviaqs.length) {
@@ -232,6 +242,7 @@ nextButton.addEventListener('click', next)
 				lastGoneH.style.display = "none";
 				lastGoneF.style.display = "none";
 				console.log("round three change to end game");
+				// scoreArray();
 
 		}
 	};
@@ -266,7 +277,7 @@ let header = document.getElementById('trivia-header');
 			ptwo.style.display = "block";
 
 		}
-				console.log("happens first")
+		console.log("happens first")
 
 		}
 };
@@ -294,43 +305,88 @@ pTwoGo.addEventListener('click', startTwo)
 				generateAnswers(currentRound);
 				next();
 			}
-			// playerTurnRelease();
-		
 };
 
-// 	function playerTurnRelease () {
-// 		if (playerturn == 3) {
-// 					displayWinner ();
-// 					displayScores ();
-// 					console.log("round three change to end game");
-				
-// 				}
-// };
-
-
+// display scores
 	function displayScores () {
 		console.log("display scores testing");
 
 		if (true ==true) {
 			endScores.style.display = "block";
 		}
-
 };
+//change the html to include the values from the player scores and total
 
+// display winner
 	function displayWinner () {
 		console.log("display winner testing");
-		// let groupScore = p1answers.scoreTotal + p2answers.scoreTotal;
-		// 	if (groupScore >= 200) {
-		// 		//display to inner HTML
-		// 		console.log(`winner winner chicken dinner! you're going home with ${winnings}!!!!`)
-
-		// 	}
-		// 	else if (groupScore < 200) {
-		// 		//display to inner HTML
-		// 		console.log("darn, not this time.")
-
-		// 	}
+// 		let groupScore = playerOneScore + playerTwoScore;
+// 			if (groupScore >= 200) {
+// 				//display to inner HTML
+// 				console.log('winner winner chicken dinner!')
+// 			}
+// 			else if (groupScore < 200) {
+// 				//display to inner HTML
+// 				console.log("darn, not this time.")
+// 			}
 };
+
+
+//calculate scores:
+
+// function calculate (index) {
+// 	let answera = document.getElementById("answer1").value
+// 	let answerb = document.getElementById("answer2").value
+// 	let answerc = document.getElementById("answer3").value
+// 	let answerd = document.getElementById("answer4").value
+
+// 	document.getElementById("answer1").value = triviaqs[index].answers[0].points
+// 	document.getElementById("answer2").value = triviaqs[index].answers[1].points
+// 	document.getElementById("answer3").value = triviaqs[index].answers[2].points
+// 	document.getElementById("answer4").value = triviaqs[index].answers[3].points
+
+		// function stringToNumber (value) {
+		// 	each time a value is saved to player score
+		// 	run it through this function so it can change from a string to a number
+		// 	before it is added to the accumulating sum
+		// };
+
+		// let playerOneScore = [];
+		// let playerTwoScore = 0
+
+		// function addScore (num) {
+		// 	playerOneScore += num
+		// 	console.log(playerOneScore);
+		// };
+
+
+
+     //        	 function addScore (num) {
+     //        	 	let num = 
+					// playerOneScore += num }
+     //            }
+    
+
+// };
+
+//start over
+
+// let startover = document.getElementById('startover');
+// startover.addEventListener('click', startova);
+
+// function startova () {
+// 	refresh page 
+// }
+
+
+
+
+
+
+
+
+
+	
 
 
 
