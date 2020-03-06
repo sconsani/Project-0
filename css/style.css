@@ -87,7 +87,9 @@ button:hover{
   display: block;
 }*/
 
-
+#ibut p {
+  font-size: 12px;
+}
 
 
 

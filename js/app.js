@@ -32,35 +32,35 @@ const triviaqs = [
 
 	{
 		question: "ON AN AIRPLANE, WHAT DO YOU HOPE THE PERSON BEHIND YOU AVOIDS DOING.",
-		answers : [	{answer: "Snoring", points: 59},
-					{answer: "Vomitting", points: 23},
-					{answer: "Kicking the Chair", points: 16},
-					{answer: "Crying", points: 5}
+		answers : [	{answer: "Chewing Loudly", points: 20},
+					{answer: "Vomitting", points: 50},
+					{answer: "Kicking the Chair", points: 60},
+					{answer: "Crying", points: 15}
 				]
 			},
 	{
-		question: "EXPRESSIONS FOREVA.",
-		answers : [	{answer: "ooo ya", points: 59},
-					{answer: "okay!", points: 23},
-					{answer: "maybe not", points: 16},
-					{answer: "hell yes", points: 5}
+		question: "NAME SOMETHING PEOPLE DO WITH A CHRISTMAS FRUIT CAKE.",
+		answers : [	{answer: "Eat it", points: 12},
+					{answer: "Re-gift It", points: 40},
+					{answer: "Throw Away", points: 70},
+					{answer: "Keep It Until It Molds", points: 20}
 				]
 			},
 	{
-		question: "another another QUESTION 6.",
-		answers : [	{answer: "Hit The Bottom", points: 59},
-					{answer: "Shake It", points: 23},
-					{answer: "Stick a Knife In It", points: 16},
-					{answer: "Hold It Sideways", points: 5}
+		question: "TELL ME SOMETHING SHARKS ARE KNOWN TO EAT.",
+		answers : [	{answer: "Seals", points: 2},
+					{answer: "Humans", points: 10},
+					{answer: "Fish", points: 40},
+					{answer: "Seaweed", points: 5}
 				]
 			},
 
 	{
-		question: "FIND A GOOD LAST ONE.",
-		answers : [	{answer: "better", points: 59},
-					{answer: "best", points: 23},
-					{answer: "better than best", points: 16},
-					{answer: "bestest", points: 5}
+		question: "BESIDES BREAD- NAME SOMETHING YOU PUT IN THE TOASTER.",
+		answers : [	{answer: "Grilled Cheese", points: 4},
+					{answer: "Pop-Tart", points: 20},
+					{answer: "Bagels", points: 16},
+					{answer: "A Knife", points: 20}
 				]
 			},
 	{
@@ -98,7 +98,7 @@ function showInstruct(){
 	let parryid = document.querySelector('#ibut');
 	parryid.append(parry);
 
-	document.querySelector('#ibut p').innerHTML = "1. Select if you are playing with 2 Live Players, or 1 player and the computer! 2. Spin the Wheel of Money to find out how much you're playing to win! 3. Player 1 Go first 4. The 20 second timer will begin and display your 1st of 7 questinos. 5. Answer what you think is the most popular answer. 6. At the end of your round, It's now Player 2's Turn. 7. Player 2, you will get the same round of questions. 8. Answer what you think is the most popular answer. If you choose something Player 1 has already selected, you must choose another answer.  9. Once your round ends we will tally up your score based on the points attributed to each 'best most popular trivia answer' 10. Reach 200 points combined in order to win your cash money prize! 11. Anything below 200 points, and you lose. No money. 12. Same applies for 1 player and Computer, your computer buddy will randomly pick best responses in order to tally up points for your team!"
+	document.querySelector('#ibut p').innerHTML = "1. Select Two Player Mode 2. Player 1- Get Ready. Select what you think is the PUBLIC'S MOST POPULAR answer, then hit NEXT in order to move to the next question. 3. At the end of your round, It's now Player 2's Turn. 7. Player 2, you will get the same round of questions. 8. Answer what you think is the most popular answer. If you choose something Player 1 has already selected, you must choose another answer.  9. Once your round ends we will tally up your score based on the points attributed to each 'best most popular trivia answer' 10. Reach 200 points combined in order to win your cash money prize! 11. Anything below 200 points, and you lose. No money."
 	
 };
 
