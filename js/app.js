@@ -102,8 +102,7 @@ function showInstruct(){
 	parryid.append(parry);
 
 	document.querySelector('#ibut p').innerHTML = "1. Select if you are playing with 2 Live Players, or 1 player and the computer! 2. Spin the Wheel of Money to find out how much you're playing to win! 3. Player 1 Go first 4. The 20 second timer will begin and display your 1st of 7 questinos. 5. Answer what you think is the most popular answer. 6. At the end of your round, It's now Player 2's Turn. 7. Player 2, you will get the same round of questions. 8. Answer what you think is the most popular answer. If you choose something Player 1 has already selected, you must choose another answer.  9. Once your round ends we will tally up your score based on the points attributed to each 'best most popular trivia answer' 10. Reach 200 points combined in order to win your cash money prize! 11. Anything below 200 points, and you lose. No money. 12. Same applies for 1 player and Computer, your computer buddy will randomly pick best responses in order to tally up points for your team!"
-	// let idp = document.querySelectorAll("#instructions");
-	// idp.innerHTML = "Hello Dolly.";
+	
 };
 
 
@@ -128,6 +127,8 @@ function start () {
 let playerOneGo = document.getElementById('player1-start');
 playerOneGo.addEventListener('click', oneGoTime);
 
+let endScores = document.getElementById("end-scores");
+
 function oneGoTime () {
 	// console.log("go time number 1");
 	let triviaboard = document.getElementById("answersbox");
@@ -136,6 +137,7 @@ function oneGoTime () {
 	if (triviaboard.style.display === "none") {
 		triviaboard.style.display = "block"
 		playerOneGo.style.display = "none"
+		endScores.style.display = "none";
 	} else {
 		triviaboard.style.display = "none"
 	}
@@ -191,6 +193,7 @@ function generateAnswers(index) {
 					///////////
 					// finding which answer is checked of the radio buttons:
 					///////////////
+
 //if value is checked - get the "points" and add it to player points
 // let radioButtons = document.getElementsByTagName('input')
 // console.log(radioButtons);
@@ -198,16 +201,11 @@ function generateAnswers(index) {
 // let answerpoints = triviaqs[0].answers.points
 // for (let i=0; i<radioButtons.length; i++)  {
 
-
-// SAVE VALUES/////////////////
-//save answers to "answers chosen array depending on player"
-//save each associated points to answer.text to player score total
-
 						// NEXT
 
 let nextButton = document.getElementById("nextbutton");
 nextButton.addEventListener('click', next)
-//when user clicks NEXT button
+
 	function next() {
 		generateQuestion(currentRound);
 		//display associated answers
@@ -217,19 +215,25 @@ nextButton.addEventListener('click', next)
 
 		currentRound++;
 
-		if (currentRound >= triviaqs.length) {
-			playerturn++;
-			playerTwoTurn();
-			hidePlayerOne ();
-			console.log(playerturn);
-			
+		if (playerturn ==1) {
 
-		//end game
-		//display new beginning - introduce player 2's turn
-	}
-};
+			if (currentRound >= triviaqs.length) {
+				playerturn++;
+				playerTwoTurn();
+				hidePlayerOne ();
+				console.log(playerturn);
+			}
+		}
+		else if (currentRound >= triviaqs.length) {
+				displayWinner ();
+				displayScores ();
+				console.log("round three change to end game");
 
-	let header = document.getElementById('trivia-header');
+		}
+	};
+
+let header = document.getElementById('trivia-header');
+
 
 	function hidePlayerOne () {
 		let pone = document.getElementById("player1-start");
@@ -252,76 +256,79 @@ nextButton.addEventListener('click', next)
 			generateQuestion(currentRound);
 			generateAnswers(currentRound);
 
-			if (true ==true) {
-				let ptwo = document.getElementById("playertwomode");
-				ptwo.style.display = "block";
 
-			}
+		if (true ==true) {
+			let ptwo = document.getElementById("playertwomode");
+			ptwo.style.display = "block";
+
+		}
 				console.log("happens first")
 
 		}
-		};
-// if (ptwo.style.display === "none") {
-// 			ptwo.style.display = "block"
-// 			pone.style.display = "none"
-// 		} else {
-// 			ptwo.style.display = "none"
-// 		}
+};
 
 
+let pTwoGo = document.getElementById("playertwo");
+pTwoGo.addEventListener('click', startTwo)
 
+	function startTwo () {
+		console.log("working button")
+		currentRound = 0
 
-// //AT END OF SET- DISPLAY PLAYER 2'S TURN/COMPUTERS TURN IN THE H1
-// function secondTurn (){
-// 	start ();
-// 	// run the start function - it should spill out the same questions
+		let pTwoQuest = document.getElementById("trivia-header");
+		let pTwoForm = document.getElementById("form");
+		let hidePtwoIntro = document.getElementById("playertwomode");
+		let endScoresS = document.getElementById("end-scores");
+
+			if (true==true) {
+				pTwoQuest.style.display = "block";
+				pTwoForm.style.display = "block";
+				hidePtwoIntro.style.display = "none";
+				endScoresS.style.display = "none";
+
+				generateQuestion(currentRound);
+				generateAnswers(currentRound);
+				next();
+			}
+			// playerTurnRelease();
+		
+};
+
+// 	function playerTurnRelease () {
+// 		if (playerturn == 3) {
+// 					displayWinner ();
+// 					displayScores ();
+// 					console.log("round three change to end game");
+				
+// 				}
 // };
 
-// function duplicate () {
-// 	//if player 2 picks an answer saved in "answersChosenP1" do not allow selection
-// 	//display warning under the answer - saying PICK ANOTHER ANSWER. ALREADY CHOSEN BY PLAYER 1.
-// }
 
-//ANSWERS GRID DISPLAY
+	function displayScores () {
+		console.log("display scores testing");
 
-// END OF SET GRID - PLAYER 1, THEN PLAYER 2 - SPLIT SCREEN.
+		if (true ==true) {
+			endScores.style.display = "block";
+		}
 
-// html to display in the dom
-//2. answers chosen by player 1 to display at end of timer (saved in array)
+};
 
-// html to display in the dom
-//3. answers chosen by player 2 to display at end of timer (saved in array)
+	function displayWinner () {
+		console.log("display winner testing");
+		// let groupScore = p1answers.scoreTotal + p2answers.scoreTotal;
+		// 	if (groupScore >= 200) {
+		// 		//display to inner HTML
+		// 		console.log(`winner winner chicken dinner! you're going home with ${winnings}!!!!`)
 
-// html to display in the dom
-//5. total score from all answers chosen
+		// 	}
+		// 	else if (groupScore < 200) {
+		// 		//display to inner HTML
+		// 		console.log("darn, not this time.")
 
-// function displayWinner() {
-// let groupScore = p1answers.scoreTotal + p2answers.scoreTotal;
-// 	if (groupScore >= 200) {
-// 		//display to inner HTML
-// 		console.log(`winner winner chicken dinner! you're going home with ${winnings}!!!!`)
-
-// 	}
-// 	else if (groupScore < 200) {
-// 		//display to inner HTML
-// 		console.log("darn, not this time.")
-
-// 	}
-// };
-
-// 1. display play again button
-// 2. display take me home button
+		// 	}
+};
 
 
-// 1. play again event listener button
-// 2. take me home event listener button
-
-//variables for the DOM
-// let h1question = `1: ${randomQuestion}`
-// let qanswers = trivia.answer.texta
 
 
-/////////////////////////////////////////////////////////
-				// when all 7 questions have been answered OR time runs out: 
-							// display: time up! player 2's turn
-/////////////////////////////////////////////////////////
+
