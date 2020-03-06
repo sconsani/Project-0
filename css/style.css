@@ -1,0 +1,90 @@
+header {
+  /*background-color: darkblue;*/
+}
+
+body.fullpage{
+  /*background-color: darkblue;*/
+  /*background-image: darkblue;*/
+/*background-image: linear-gradient(to bottom, #FF00C9, #0097FF);*/
+/*background-image: linear-gradient(to right, #13A947, #019033);*/
+}
+
+header {
+text-align: center;
+
+}
+
+header h1 {
+  margin: 0px;
+  padding: 0px;
+  font-size: 40px;
+}
+header p {
+  margin: 5px;
+  padding: 0px;
+  font-size: 18px;
+  font-size: 18px;
+}
+
+header #ibut {
+  margin: 5px;
+  padding: 5px;
+
+}
+
+#instructionsbutton {
+  font-size: 12px;
+}
+
+button:hover{
+  border-color: red;
+  background-color: pink;
+  border-width: 2px;
+
+
+}
+
+/*#topmain  h1{
+  font-size: 40px;
+  font-color: forestgreen;
+  font-color: red;
+
+}*/
+
+#twoplayers{
+  font-size: 20px;
+
+}
+
+#trivia-header {
+  display: none;
+
+}
+#answersbox {
+  display: none;
+}
+#next {
+  display: none;
+}
+
+
+#trivia-header #question {
+  font-color: red;
+  font-style: italic;
+  font-weight: bold;
+}
+
+#nextbutton{
+ /* margin: 5px;
+  padding: 5px;*/
+}
+
+
+
+
+
+
+
+
+
+
