@@ -169,46 +169,6 @@ function generateAnswers(index) {
 
 };
 
-// function saveScore() {
-// 	if (triviaqs[index].answers[0].answer.checked == true) {
-// 		console.log(document.getElementById("answer1").value);
-// 	}
-// };
-
-
-
-
-// 	if(radioButtons[i].checked == true) {
-// 		playerOneScore = playerOneScore += radioButtons[i].answerpoints
-// 	}
-// 	else if (radioButtons[i].checked !==true) {
-// 		playerOneScore = playerOneScore += 0
-// }
-
-
-
-					///////////
-					// finding which answer is checked of the radio buttons:
-					///////////////
-
-//if value is checked - get the "points" and add it to player points
-
-// function scoreArray () {
-// 		let ele = document.getElementsByName('triviaanswer').value; 
-              
-//         for(let i = 0; i < ele.length; i++) { 
-//             if(ele[i].checked) {
-//             	 playerOneScore.push(ele[i].value)
-//             	};
-//             	console.log(playerOneScore);
-//     }
-
-// }; 
-
-
-
-
-
 						// NEXT
 
 let nextButton = document.getElementById("nextbutton");
@@ -231,6 +191,8 @@ nextButton.addEventListener('click', next)
 				hidePlayerOne ();
 				console.log(playerturn);
 				// scoreArray();
+				// generateScore ();
+				// displayScores();
 
 			}
 		}
@@ -275,6 +237,9 @@ let header = document.getElementById('trivia-header');
 		if (true ==true) {
 			let ptwo = document.getElementById("playertwomode");
 			ptwo.style.display = "block";
+			let congrats = document.getElementById("congrats");
+			congrats.innerHTML = `Congrats Player 1, your score total is: ${playerOneScore}`
+
 
 		}
 		console.log("happens first")
@@ -313,6 +278,10 @@ pTwoGo.addEventListener('click', startTwo)
 
 		if (true ==true) {
 			endScores.style.display = "block";
+			document.getElementById("poneendscore").innerHTML = `PLAYER 1 SCORE: ${playerOneScore}`
+			document.getElementById("ptwoendscore").innerHTML = `PLAYER 2 SCORE: ${playerTwoScore}`
+			document.getElementById("totalscore").innerHTML = `TOTAL SCORE:${playerTwoScore} pts`
+
 		}
 };
 //change the html to include the values from the player scores and total
@@ -320,64 +289,93 @@ pTwoGo.addEventListener('click', startTwo)
 // display winner
 	function displayWinner () {
 		console.log("display winner testing");
-// 		let groupScore = playerOneScore + playerTwoScore;
-// 			if (groupScore >= 200) {
-// 				//display to inner HTML
-// 				console.log('winner winner chicken dinner!')
-// 			}
-// 			else if (groupScore < 200) {
-// 				//display to inner HTML
-// 				console.log("darn, not this time.")
-// 			}
+		let groupScore = playerOneScore + playerTwoScore;
+			if (groupScore >= 200) {
+				//display to inner HTML
+			let winnernote = document.getElementById("winner")
+			winnernote.style.display = "block";
+
+				console.log('winner winner chicken dinner!')
+			}
+			else if (groupScore < 200) {
+			let losernote = document.getElementById("loser")
+			losernote.style.display = "block";
+				//display to inner HTML
+				console.log("darn, not this time.")
+			}
 };
 
 
+	
+
 //calculate scores:
+// let playerOneScore = [];
+let playerOneScore = 0
+let playerTwoScore = 0
 
-// function calculate (index) {
-// 	let answera = document.getElementById("answer1").value
-// 	let answerb = document.getElementById("answer2").value
-// 	let answerc = document.getElementById("answer3").value
-// 	let answerd = document.getElementById("answer4").value
 
-// 	document.getElementById("answer1").value = triviaqs[index].answers[0].points
-// 	document.getElementById("answer2").value = triviaqs[index].answers[1].points
-// 	document.getElementById("answer3").value = triviaqs[index].answers[2].points
-// 	document.getElementById("answer4").value = triviaqs[index].answers[3].points
+// 	function generateScore(index) {
+	
+// 		let answera = document.getElementById("answer1").value
+// 		let answerb = document.getElementById("answer2").value
+// 		let answerc = document.getElementById("answer3").value
+// 		let answerd = document.getElementById("answer4").value
+
+// 		document.getElementById("answer1").value = triviaqs[index].answers[0].points
+// 		document.getElementById("answer2").value = triviaqs[index].answers[1].points
+// 		document.getElementById("answer3").value = triviaqs[index].answers[2].points
+// 		document.getElementById("answer4").value = triviaqs[index].answers[3].points
+
+
+// 		if(index[i].checked == true) {
+// 			// parseInt();
+// 			playerOneScore = playerOneScore += radioButtons[i].answerpoints
+// 		}
+// 		else if (index[i].checked !==true) {
+// 			playerOneScore = playerOneScore += 0
+// 	}
+// };
+
+function generateScore () {
+
+		document.getElementById("answer1").value = triviaqs[index].answers[0].points
+		document.getElementById("answer2").value = triviaqs[index].answers[1].points
+		document.getElementById("answer3").value = triviaqs[index].answers[2].points
+		document.getElementById("answer4").value = triviaqs[index].answers[3].points
+
+		let ele = document.getElementsByName('triviaanswer'); 
+              
+	        for(let i = 0; i < ele.length; i++) { 
+	            if(ele[i].checked==true) {
+	            	 if(ele[i].value === triviaqs[i].answers.points) {
+	            	 	
+						console.log(triviaqs[i].answers.points)
+	            	 	// playerOneScore++;
+	            	 }
+//else- player 2 score if round 2
+
+	            	//  playerOneScore.push(ele[i].value)
+	            	// };
+	            	// console.log(playerOneScore);
+	    }
+	}
+
+}; 
 
 		// function stringToNumber (value) {
+			// parseInt()
+
 		// 	each time a value is saved to player score
 		// 	run it through this function so it can change from a string to a number
 		// 	before it is added to the accumulating sum
 		// };
 
-		// let playerOneScore = [];
-		// let playerTwoScore = 0
+		
 
 		// function addScore (num) {
 		// 	playerOneScore += num
 		// 	console.log(playerOneScore);
 		// };
-
-
-
-     //        	 function addScore (num) {
-     //        	 	let num = 
-					// playerOneScore += num }
-     //            }
-    
-
-// };
-
-//start over
-
-// let startover = document.getElementById('startover');
-// startover.addEventListener('click', startova);
-
-// function startova () {
-// 	refresh page 
-// }
-
 
 
 

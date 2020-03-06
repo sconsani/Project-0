@@ -91,7 +91,12 @@ button:hover{
   font-size: 12px;
 }
 
+#winner {
+  display: none;
+}
 
-
+#loser {
+  display: none;
+}
 
 
