@@ -6,7 +6,7 @@ The goal of the game Fast Money is to get a combined score of at least 200pts or
 2. User is promted to get Player1Ready. Select what you think is the PUBLIC'S MOST POPULAR answer, then hit NEXT in order to move to the next question. 
 3. At the end of Player1's round, It will congratualate and display their total score. And prompt Player2 to get ready for their turn.
 4. Player 2, will be prompted to get ready, this user will get the same round of questions as Player1.
-5. User must choose what they think is the most popular answer. If you choose something Player 1 has already selected, you must choose another answer.  
+5. User must choose what they think is the most popular answer.  
 6. Once Player2 round ends- the score will be tallied up based on the points attributed to each 'best most popular trivia answer.' 
 7. Reach 200 points combined in order to win cash money prize! 
 8. Anything below 200 points, and users lose. No money."
