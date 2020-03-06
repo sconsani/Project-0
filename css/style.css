@@ -6,12 +6,20 @@ body.fullpage{
   /*background-color: darkblue;*/
   /*background-image: darkblue;*/
 /*background-image: linear-gradient(to bottom, #FF00C9, #0097FF);*/
-/*background-image: linear-gradient(to right, #13A947, #019033);*/
+/*ba/*ckground-image: linear-gradient(to right, #13A947, #019033);*/
+
 }
 
 header {
 text-align: center;
+}
 
+#topmain h1 {
+  font-family: courier;
+}
+
+#topmain p {
+  font-family: courier;
 }
 
 header h1 {
@@ -36,7 +44,12 @@ header #ibut {
   font-size: 12px;
 }
 
+button {
+  font-family: courier;
+}
+
 button:hover{
+
   border-color: red;
   background-color: pink;
   border-width: 2px;
@@ -68,10 +81,30 @@ button:hover{
 }
 
 
-#trivia-header #question {
-  font-color: red;
+h1 #question {
+  color: blue;
   font-style: italic;
   font-weight: bold;
+}
+
+#label1 {
+  font-family: courier;
+  color: red;
+}
+
+#label2 {
+  font-family: courier;
+  color: green;
+}
+
+#label3 {
+  font-family: courier;
+  color: blue;
+}
+
+#label4 {
+  font-family: courier;
+  color: orange;
 }
 
 #nextbutton{
@@ -93,10 +126,27 @@ button:hover{
 
 #winner {
   display: none;
+  color: green;
+  font-size: 60px;
 }
 
 #loser {
   display: none;
+  color: red;
+  font-size: 60px;
 }
 
+#totalscore {
 
+}
+
+#poneendscore {
+color: blue;
+font-family: courier;
+
+}
+
+#ptwoendscore {
+color: orange ;
+font-family: courier;
+}
