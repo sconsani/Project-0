@@ -23,6 +23,9 @@ Ideas/Functionality in Game Expansion:
 5. Create a Randomizer and shuffler fuction to give the user more chances to play multiple times with different questions
 6. Set each answer to more specific points to create a more difficult chance of winning. 
 
+My Code: 
+I built into my HTML a simple header and Introduction for the Game. Using javaScript and Event listeners on my buttons I appended the question and answer section to the DOM, and ultimately displayed a final score from both round 1 and round 2 for from each player. In my CSS style sheet I stylized the font, font-color, and button features on hover. 
+
 Original Wireframes:
 
 ![Images](Images/wire-frame-1.JPG) 
