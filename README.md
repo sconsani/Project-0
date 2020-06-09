@@ -1,3 +1,4 @@
+
 # Project-0
 Fast Money!
 The goal of the game Fast Money is to get a combined score of at least 200pts or over between both player1 and player2. Each answer is associated with higher or lower points. Higher points are set to answers that are most likely to be answered by the majority of a pool of people. If player1 and player2 cannot get a cumulative score of at least 200 points, they lose and don't go home with any winnings. 
@@ -15,3 +16,6 @@ The goal of the game Fast Money is to get a combined score of at least 200pts or
 
 ![alt text] (Images/Project-0-Fast-Money/wire-frame-1.jpg)
 ![alt text] (Images/Project-0-Fast-Money/wire-frame-2.jpg)
+
+look at branch "working"
+
